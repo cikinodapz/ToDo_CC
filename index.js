@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 // Middleware buat parse JSON
 app.use(express.json());
@@ -137,6 +137,8 @@ app.delete('/api/todos/:id', (req, res) => {
 });
 
 // Jalankan server
+const port = process.env.PORT || 8080;
+
 app.listen(port, () => {
   console.log(`Server jalan di http://localhost:${port}`);
 });
